@@ -1,1 +1,432 @@
-/* ini css */
+/* Mengatur gaya umum untuk seluruh tubuh halaman */
+body {
+    font-family: sans-serif; /* Mengatur jenis font untuk teks halaman */
+    margin: 0; /* Menghapus margin default browser */
+    padding: 0; /* Menghapus padding default browser */
+    background-color: #f4f4f4; /* Mengatur warna latar belakang halaman */
+  }
+  
+  /* Mengatur gaya untuk kontainer utama */
+  .container {
+    width: 80%; /* Mengatur lebar kontainer sebagai 80% dari lebar viewport */
+    margin: 0 auto; /* Menyelaraskan kontainer secara horizontal di tengah */
+    padding: 20px; /* Menambahkan padding di dalam kontainer */
+  }
+  
+  /* Mengatur gaya umum untuk navigasi */
+  .nav {
+    display: flex; /* Menggunakan flexbox untuk layout horizontal */
+    justify-content: space-between; /* Menyebar elemen dengan jarak yang sama */
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+    padding: 10px 20px; /* Menambahkan padding di sekitar navigasi */
+    background-color: #007bff; /* Mengatur warna latar belakang navigasi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan halus */
+  }
+  
+  /* Mengatur gaya untuk logo dalam navigasi */
+  .nav .logo img {
+    height: 50px; /* Mengatur tinggi gambar logo */
+    width: auto; /* Menyesuaikan lebar gambar sesuai dengan tinggi */
+  }
+  
+  /* Mengatur gaya untuk daftar link navigasi */
+  .nav-links {
+    display: flex; /* Menggunakan flexbox untuk layout horizontal link */
+    list-style: none; /* Menghapus bullet points dari daftar */
+    margin: 0; /* Menghapus margin default */
+    padding: 0; /* Menghapus padding default */
+  }
+  
+  /* Mengatur gaya untuk setiap item dalam daftar link navigasi */
+  .nav-links li {
+    margin-left: 20px; /* Menambahkan jarak antara item */
+  }
+  
+  /* Mengatur gaya untuk link navigasi */
+  .nav-links a {
+    text-decoration: none; /* Menghapus garis bawah dari link */
+    color: #fff; /* Mengatur warna teks link */
+    font-size: 16px; /* Mengatur ukuran font link */
+    font-weight: 500; /* Mengatur ketebalan font link */
+    position: relative; /* Mengatur posisi relatif untuk elemen pseudo */
+    padding-bottom: 5px; /* Menambahkan padding bawah */
+    transition: color 0.3s, border-bottom 0.3s; /* Menambahkan transisi untuk efek hover */
+  }
+  
+  /* Animasi untuk link navigasi */
+  .nav-links a::after {
+    content: ''; /* Konten kosong untuk pseudo-elemen */
+    position: absolute; /* Posisi absolut untuk animasi */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Lebar penuh dari link */
+    height: 2px; /* Tinggi garis bawah */
+    background-color: #fff; /* Warna garis bawah */
+    transform: scaleX(0); /* Mengatur skala horizontal awal ke 0 */
+    transform-origin: bottom right; /* Titik asal transformasi */
+    transition: transform 0.3s ease-out; /* Transisi halus untuk animasi */
+  }
+  
+  .nav-links a:hover::after {
+    transform: scaleX(1); /* Mengatur skala horizontal saat hover */
+    transform-origin: bottom left; /* Titik asal saat hover */
+  }
+  
+  .nav-links a:hover {
+    color: #f4f4f4; /* Mengubah warna teks saat hover */
+  }
+  /* Mengatur gaya untuk bagian header halaman */
+  .header {
+    border-top: 1px solid #ddd; /* Border atas untuk memisahkan bagian penutup dari konten lain */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    margin-bottom: 20px; /* Menambahkan jarak di bawah header */
+    padding: 20px; /* Padding di dalam header */
+  }
+  
+  /* Animasi masuk untuk judul header */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .header h1,
+  .header h2 {
+    animation: slideIn 1s ease-out;
+    margin: 0;
+  }
+  
+  /* Mengatur gaya untuk judul utama di header */
+  .header h1 {
+    font-size: 36px; /* Mengatur ukuran font untuk judul utama */
+    color: #333; /* Mengatur warna font */
+    margin-bottom: 10px; /* Menambahkan jarak di bawah judul utama */
+  }
+  
+  /* Mengatur gaya untuk sub-judul di header */
+  .header h2 {
+    font-size: 24px; /* Mengatur ukuran font untuk sub-judul */
+    color: #333; /* Mengatur warna font */
+    margin-bottom: 10px; /* Menambahkan jarak di bawah sub-judul */
+  }
+  
+  /* Mengatur gaya untuk konten utama halaman */
+  .content {
+    display: flex; /* Menggunakan flexbox untuk layout dua kolom */
+    justify-content: space-between; /* Menyebar kolom dengan jarak yang sama */
+    gap: 20px; /* Jarak antara kolom */
+  }
+  
+  /* Mengatur gaya untuk kolom kiri dan kanan */
+  .left-col,
+  .right-col {
+    width: 48%; /* Mengatur lebar kolom sebagai 48% dari lebar konten */
+    padding: 20px; /* Menambahkan padding di dalam kolom */
+    background-color: #fff; /* Mengatur warna latar belakang kolom */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Menambahkan bayangan halus di kontainer */
+    border-radius: 8px; /* Radius sudut untuk kolom */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Efek hover pada kolom */
+  .left-col:hover,
+  .right-col:hover {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Bayangan saat hover */
+  }
+  
+  /* Mengatur gaya untuk kontainer gambar */
+  .image-container {
+    text-align: center; /* Menyelaraskan gambar di tengah kontainer */
+    margin-bottom: 20px; /* Menambahkan jarak di bawah gambar */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Membatasi lebar gambar agar tidak melebihi kontainer */
+    height: auto; /* Mengatur tinggi gambar secara otomatis sesuai lebar */
+    border-radius: 8px; /* Radius sudut gambar */
+  }
+  
+  /* Mengatur gaya untuk kutipan atau testimonial */
+  .quote {
+    border-left: 5px solid #333; /* Menambahkan garis vertikal di sebelah kiri kutipan */
+    padding: 10px; /* Menambahkan padding di dalam kutipan */
+    margin-bottom: 20px; /* Menambahkan jarak di bawah kutipan */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .quote:hover {
+    background-color: #f9f9f9; /* Warna latar belakang saat hover */
+    border-color: #007bff; /* Warna border saat hover */
+  }
+  
+  .item {
+    display: flex; /* Menggunakan flexbox untuk layout item manfaat */
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+  }
+  
+  /* Mengatur gaya untuk gambar admin dalam kutipan */
+  .admin img {
+    height: 40px; /* Mengatur tinggi gambar admin */
+    width: 40px; /* Mengatur lebar gambar admin */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+  }
+  
+  /* Animasi muncul bertahap untuk item manfaat */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .benefit {
+    display: flex; /* Menggunakan flexbox untuk layout manfaat */
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+    margin-bottom: 10px; /* Menambahkan jarak di bawah setiap item manfaat */
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  /* Mengatur gaya untuk gambar manfaat */
+  .benefit-satu img,
+  .benefit-dua img,
+  .benefit-tiga img {
+    height: 25px; /* Mengatur tinggi gambar manfaat */
+    width: 25px; /* Mengatur lebar gambar manfaat */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    margin-right: 10px; /* Menambahkan jarak di sebelah kanan gambar manfaat */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Mengatur gaya untuk teks manfaat */
+  .benefit-text {
+    flex: 1; /* Membuat teks manfaat fleksibel untuk mengisi ruang yang tersisa */
+  }
+  
+  /* Mengatur gaya untuk kontainer form */
+  .form-container {
+    padding: 20px; /* Menambahkan padding di dalam kontainer form */
+  }
+  
+  /* Mengatur gaya untuk grup form */
+  .form-group {
+    margin-bottom: 15px; /* Menambahkan jarak di bawah setiap grup form */
+  }
+  
+  /* Mengatur gaya untuk label form */
+  label {
+    display: block; /* Mengatur label sebagai elemen block untuk tampilan baris baru */
+    margin-bottom: 5px; /* Menambahkan jarak di bawah label */
+  }
+  
+  /* Mengatur gaya untuk input teks, input email, dan select */
+  input[type="text"],
+  input[type="email"],
+  select {
+    width: 100%; /* Mengatur lebar input dan select menjadi 100% dari lebar kontainer */
+    padding: 10px; /* Menambahkan padding di dalam input dan select */
+    border: 1px solid #ccc; /* Mengatur warna border */
+    border-radius: 4px; /* Menambahkan radius sudut untuk border */
+    box-sizing: border-box; /* Mengatur box-sizing untuk memperhitungkan padding dan border dalam lebar elemen */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+  }
+  
+  /* Mengatur gaya untuk tombol kirim */
+  button[type="submit"] {
+    width: 100%; /* Mengatur lebar tombol menjadi 100% dari lebar kontainer */
+    height: 32px; /* Mengatur tinggi tombol */
+    background-color: #007bff; /* Mengatur warna latar belakang tombol */
+    color: #fff; /* Mengatur warna teks tombol */
+    padding: 10px 20px; /* Menambahkan padding di dalam tombol */
+    border: none; /* Menghapus border default tombol */
+    border-radius: 4px; /* Menambahkan radius sudut untuk border tombol */
+    cursor: pointer; /* Mengubah cursor menjadi pointer saat hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Mengatur gaya saat tombol submit di-hover */
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Mengubah warna latar belakang tombol saat hover */
+    transform: scale(1.05); /* Zoom tombol saat hover */
+  }
+  
+  
+  /* Mengatur gaya untuk kontainer paket wisata */
+  .container-our-package {
+    width: 77%; /* Mengatur lebar kontainer sebagai 80% dari lebar viewport */
+    margin: 0 auto; /* Menyelaraskan kontainer secara horizontal di tengah */
+    padding: 20px; /* Menambahkan padding di dalam kontainer */
+    background-color: #fff; /* Mengatur warna latar belakang kontainer */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Menambahkan bayangan halus di kontainer */
+  }
+  
+  /* Mengatur gaya untuk judul paket wisata */
+  h1 {
+    text-align: center; /* Menyelaraskan judul di tengah */
+    margin-bottom: 20px; /* Menambahkan jarak di bawah judul */
+  }
+  
+  /* Mengatur gaya untuk grid paket wisata */
+  .package-grid {
+    display: grid; /* Menggunakan grid layout untuk paket wisata */
+    grid-template-columns: repeat(3, 1fr); /* Membagi grid menjadi 3 kolom yang sama */
+    grid-gap: 20px; /* Menambahkan jarak antar kolom dan baris */
+  }
+  
+  /* Mengatur gaya untuk kartu paket wisata */
+  .package-card {
+    padding: 20px; /* Menambahkan padding di dalam kartu */
+    border: 1px solid #ddd; /* Menambahkan border pada kartu */
+    border-radius: 5px; /* Menambahkan radius sudut untuk border */
+    text-align: center; /* Menyelaraskan teks di tengah kartu */
+  }
+  
+  .package-card {
+    padding: 20px; /* Padding di dalam kartu */
+    border: 1px solid #ddd; /* Border kartu */
+    border-radius: 5px; /* Radius sudut untuk border */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    background-color: #fff; /* Warna latar belakang kartu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus di sekitar kartu */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transisi halus untuk transformasi, bayangan, dan warna latar belakang */
+  }
+  
+  .package-card:hover {
+    transform: scale(1.05); /* Memperbesar kartu saat hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan yang lebih besar saat hover */
+    background-color: #f9f9f9; /* Mengubah warna latar belakang saat hover */
+  }
+  
+  .package-card .icon {
+    display: inline-block; /* Menampilkan ikon sebagai elemen inline-block */
+    margin-bottom: 10px; /* Jarak di bawah ikon */
+  }
+  
+  .package-card .icon i {
+    font-size: 24px; /* Ukuran ikon */
+    color: #007bff; /* Warna ikon */
+    transition: color 0.3s; /* Transisi halus untuk perubahan warna ikon */
+  }
+  
+  .package-card:hover .icon i {
+    color: #0056b3; /* Mengubah warna ikon saat hover */
+  }
+  
+  .package-card h3 {
+    margin-top: 0; /* Menghapus margin di atas judul */
+    font-size: 20px; /* Ukuran font untuk judul */
+    color: #333; /* Warna teks judul */
+    transition: color 0.3s; /* Transisi halus untuk perubahan warna teks */
+  }
+  
+  .package-card:hover h3 {
+    color: #007bff; /* Mengubah warna judul saat hover */
+  }
+  
+  .package-card p {
+    color: #666; /* Warna teks paragraf */
+    font-size: 16px; /* Ukuran font untuk paragraf */
+  }
+  
+  .manfaat h2 {
+    line-height: 2;
+    text-align: center;
+  }
+  
+  .manfaat p {
+    line-height: 1.6; 
+    text-align: center;
+  }
+  
+  /* Mengatur gaya untuk bagian penutup */
+  .closing {
+    text-align: center; /* Menyelaraskan teks di tengah */
+    padding: 20px; /* Menambahkan padding di sekitar teks */
+    border-top: 1px solid #ddd; /* Border atas untuk memisahkan bagian penutup dari konten lain */
+    margin-top: 20px; /* Menambahkan jarak di atas bagian penutup */
+  }
+  
+  .closing p {
+    font-size: 18px; /* Ukuran font untuk paragraf */
+    color: #333; /* Warna teks */
+    margin: 0 0 10px; /* Jarak di bawah paragraf */
+  }
+  
+  /* Mengatur gaya untuk tombol hubungi kami */
+  .call-us {
+    display: inline-block; /* Menampilkan tombol sebagai elemen inline-block agar sesuai dengan ukuran kontennya */
+    margin: 20px auto; /* Menyelaraskan tombol secara horizontal di tengah dengan jarak di atas dan bawah */
+    padding: 10px 20px; /* Menambahkan padding di dalam tombol */
+    background-color: #007bff; /* Mengatur warna latar belakang tombol */
+    color: #fff; /* Mengatur warna teks tombol */
+    text-decoration: none; /* Menghapus garis bawah dari link */
+    border: none; /* Menghapus border default tombol */
+    border-radius: 5px; /* Menambahkan radius sudut untuk border tombol */
+    font-size: 16px; /* Ukuran font tombol */
+    font-weight: bold; /* Membuat teks tombol menjadi tebal */
+    text-align: center; /* Menyelaraskan teks di tengah tombol */
+    cursor: pointer; /* Mengubah cursor menjadi pointer saat hover */
+    transition: background-color 0.3s, transform 0.3s; /* Menambahkan efek transisi pada warna latar belakang dan transformasi */
+  }
+  
+  .call-us:hover {
+    background-color: #0056b3; /* Mengubah warna latar belakang saat hover */
+    transform: scale(1.05); /* Sedikit memperbesar tombol saat hover */
+  }
+  
+  .call-us:active {
+    transform: scale(0.95); /* Sedikit memperkecil tombol saat diklik untuk efek tombol ditekan */
+  }
+  
+  /* Mengatur gaya untuk footer */
+  .footer {
+    text-align: center; /* Menyelaraskan teks di tengah footer */
+    padding: 10px; /* Menambahkan padding di dalam footer */
+    margin-top: 20px; /* Menambahkan jarak di atas footer */
+    background-color: #007bff; /* Mengatur warna latar belakang footer */
+    color: #fff; /* Mengatur warna teks footer */
+    cursor: pointer; /* Mengubah cursor menjadi pointer saat hover */
+  }
+  
+  /* Mengatur gaya untuk gambar di footer */
+  .footer img {
+    height: 50px; /* Mengatur tinggi gambar footer */
+    width: 50px; /* Mengatur lebar gambar footer */
+  }
+  
+  /* Mengatur gaya untuk paragraf di footer */
+  .footer p {
+    margin: 0; /* Menghapus margin dari paragraf di footer */
+  }
+  
+  /* Gaya responsif untuk tampilan layar lebih kecil dari 768px */
+  @media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Mengubah layout konten menjadi kolom */
+    }
+  
+    .left-col, .right-col {
+        width: 100%; /* Mengatur lebar kolom menjadi 100% dari lebar konten */
+        margin-bottom: 20px; /* Menambahkan jarak di bawah kolom */
+    }
+  
+    .package-grid {
+        grid-template-columns: 1fr; /* Mengubah grid menjadi 1 kolom */
+    }
+  }
+  

@@ -113,3 +113,4 @@ document.addEventListener('DOMContentLoaded', function() {
     var url = 'https://support.google.com/chatsupport/?hl=en';
     window.open(url, '_blank'); // Membuka URL dalam tab baru
   }
+  

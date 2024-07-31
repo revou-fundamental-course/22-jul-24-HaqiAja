@@ -11,6 +11,8 @@ body {
     width: 80%; /* Mengatur lebar kontainer sebagai 80% dari lebar viewport */
     margin: 0 auto; /* Menyelaraskan kontainer secara horizontal di tengah */
     padding: 20px; /* Menambahkan padding di dalam kontainer */
+    background-color: #fff; /* Mengatur warna latar belakang kontainer */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Menambahkan bayangan halus di kontainer */
   }
   
   /* Mengatur gaya umum untuk navigasi */
@@ -126,31 +128,51 @@ body {
   .left-col,
   .right-col {
     width: 48%; /* Mengatur lebar kolom sebagai 48% dari lebar konten */
-    padding: 20px; /* Menambahkan padding di dalam kolom */
-    background-color: #fff; /* Mengatur warna latar belakang kolom */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Menambahkan bayangan halus di kontainer */
-    border-radius: 8px; /* Radius sudut untuk kolom */
-    transition: box-shadow 0.3s ease;
   }
   
-  /* Efek hover pada kolom */
-  .left-col:hover,
-  .right-col:hover {
-    box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Bayangan saat hover */
-  }
-  
-  /* Mengatur gaya untuk kontainer gambar */
-  .image-container {
-    text-align: center; /* Menyelaraskan gambar di tengah kontainer */
-    margin-bottom: 20px; /* Menambahkan jarak di bawah gambar */
-  }
-  
-  .image-container img {
-    max-width: 100%; /* Membatasi lebar gambar agar tidak melebihi kontainer */
-    height: auto; /* Mengatur tinggi gambar secara otomatis sesuai lebar */
-    border-radius: 8px; /* Radius sudut gambar */
-  }
-  
+/* Kontainer untuk slider */
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Kontainer untuk slides */
+.slides {
+  display: flex;
+  width: 1000%; /* 100% untuk setiap gambar * 10 gambar */
+  animation: slide 30s infinite; /* Sesuaikan waktu sesuai kebutuhan */
+}
+
+/* Slide individu */
+.slide {
+  width: 10%; /* 100% / 10 gambar */
+  flex: 1 0 10%;
+  text-align: center;
+}
+
+/* Styling gambar */
+.slide img {
+  max-width: 100%; /* Membatasi lebar gambar agar tidak melebihi kontainer */
+  height: auto; /* Mengatur tinggi gambar secara otomatis sesuai lebar */
+  object-fit: cover; /* Memastikan gambar memenuhi kontainer tanpa distorsi */
+  display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+}
+
+/* Keyframes untuk efek sliding */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(-10%); }
+  20% { transform: translateX(-20%); }
+  30% { transform: translateX(-30%); }
+  40% { transform: translateX(-40%); }
+  50% { transform: translateX(-50%); }
+  60% { transform: translateX(-60%); }
+  70% { transform: translateX(-70%); }
+  80% { transform: translateX(-80%); }
+  90% { transform: translateX(-90%); }
+  100% { transform: translateX(-100%); }
+}
   /* Mengatur gaya untuk kutipan atau testimonial */
   .quote {
     border-left: 5px solid #333; /* Menambahkan garis vertikal di sebelah kiri kutipan */
@@ -268,7 +290,7 @@ body {
   
   /* Mengatur gaya untuk kontainer paket wisata */
   .container-our-package {
-    width: 77%; /* Mengatur lebar kontainer sebagai 80% dari lebar viewport */
+    width: 80%; /* Mengatur lebar kontainer sebagai 80% dari lebar viewport */
     margin: 0 auto; /* Menyelaraskan kontainer secara horizontal di tengah */
     padding: 20px; /* Menambahkan padding di dalam kontainer */
     background-color: #fff; /* Mengatur warna latar belakang kontainer */
